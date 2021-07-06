@@ -1,15 +1,19 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = (env, options) => {
   let plugins = [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
     }),
   ]
   if (options.mode === 'production') {
-    plugins.splice(0, 0, new CleanWebpackPlugin())
+    plugins.splice(1, 0, new CleanWebpackPlugin())
   }
   return {
     entry: {
