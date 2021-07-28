@@ -5,9 +5,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = (env, options) => {
   let plugins = [
-    new webpack.ProvidePlugin({
-      process: 'process/browser',
-    }),
+    // new webpack.ProvidePlugin({
+    //   process: 'process/browser',
+    // }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
     }),
@@ -20,12 +20,12 @@ module.exports = (env, options) => {
   return {
     resolve: {
       extensions: ['.ts', '.tsx', '.js'],
-      alias: {
-        process: 'process/browser',
-      },
+      // alias: {
+      //   process: 'process/browser',
+      // },
     },
     entry: {
-      'myLib': path.resolve(__dirname, './src/index.ts'),
+      myLib: path.resolve(__dirname, './src/index.ts'),
     },
     devtool: 'source-map',
     output: {
@@ -35,6 +35,9 @@ module.exports = (env, options) => {
       libraryTarget: 'umd',
       libraryExport: 'default',
     },
+    // devServer: {
+    //   injectClient: false,
+    // },
     module: {
       rules: [
         {
