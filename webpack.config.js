@@ -12,14 +12,22 @@ module.exports = (env, options) => {
       template: path.join(__dirname, 'index.html'),
     }),
   ]
+
   if (options.mode === 'production') {
     plugins.splice(1, 0, new CleanWebpackPlugin())
   }
+
   return {
-    entry: {
-      bundle: path.resolve(__dirname, './src/index.ts'),
-      // 'bundle.min': path.resolve(__dirname, './src/index.ts'),
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js'],
+      alias: {
+        process: 'process/browser',
+      },
     },
+    entry: {
+      'myLib': path.resolve(__dirname, './src/index.ts'),
+    },
+    devtool: 'source-map',
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
