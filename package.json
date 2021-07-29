@@ -1,11 +1,14 @@
 {
   "name": "@passon/js-lib-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "> TODO: description",
   "author": "fangmingdong <fangmingdong@58.com>",
   "homepage": "https://github.com/fangmd/js-lib#readme",
   "main": "./dist/myLib.js",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "webpack serve --open --config ./webpack.config.js --mode development --hot",
     "build": "webpack --config ./webpack.config.js --mode production"

@@ -34,6 +34,7 @@ module.exports = (env, options) => {
       library: 'myLib', // 在全局变量中增加一个library变量
       libraryTarget: 'umd',
       libraryExport: 'default',
+      globalObject: 'this',
     },
     // devServer: {
     //   injectClient: false,
