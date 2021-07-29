@@ -36,9 +36,6 @@ module.exports = (env, options) => {
       libraryExport: 'default',
       globalObject: 'this',
     },
-    // devServer: {
-    //   injectClient: false,
-    // },
     module: {
       rules: [
         {
