@@ -1,9 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = (env, options) => {
+  const isProd = options.mode === 'production'
   let plugins = [
     // new webpack.ProvidePlugin({
     //   process: 'process/browser',
@@ -12,10 +12,6 @@ module.exports = (env, options) => {
       template: path.join(__dirname, 'index.html'),
     }),
   ]
-
-  if (options.mode === 'production') {
-    plugins.splice(1, 0, new CleanWebpackPlugin())
-  }
 
   return {
     resolve: {
@@ -30,7 +26,7 @@ module.exports = (env, options) => {
     devtool: 'source-map',
     output: {
       filename: '[name].js',
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'dist/umd/'),
       library: 'myLib', // 在全局变量中增加一个library变量
       libraryTarget: 'umd',
       libraryExport: 'default',

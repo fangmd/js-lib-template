@@ -1,9 +1,8 @@
 import { delName } from './utils'
-
-console.log('122')
+console.log('index.ts exc')
 
 function add(one: number, two: number) {
   return one + two
 }
 
-export default { add, delName }
+export { add, delName }
