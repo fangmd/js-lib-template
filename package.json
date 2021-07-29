@@ -1,6 +1,6 @@
 {
   "name": "@passon/js-lib-template",
-  "version": "1.0.3",
+  "version": "2.0.1",
   "description": "> TODO: description",
   "author": "fangmingdong <fangmingdong@58.com>",
   "homepage": "https://github.com/fangmd/js-lib#readme",
@@ -25,10 +25,10 @@
     "@babel/runtime": "^7.14.8",
     "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^5.3.2",
+    "rimraf": "^3.0.2",
     "webpack": "^5.47.0",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^4.0.0-rc.0",
-    "rimraf": "^3.0.2"
+    "webpack-dev-server": "^4.0.0-rc.0"
   },
   "dependencies": {}
 }
